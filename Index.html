@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0f0d">
+  <title>STI Academy | School of Technology & Innovation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="navbar">
+
+    <a href="#home" class="logo">
+      <span>STI</span> Academy
+    </a>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#courses">Courses</a>
+      <a href="#quiz">Career Quiz</a>
+      <a href="#register">Register</a>
+    </nav>
+
+    <a href="#register" class="nav-btn">
+      Register
+    </a>
+
+  </header>
+
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+
+      <div class="hero-content">
+
+        <p class="eyebrow">
+          SCHOOL OF TECHNOLOGY & INNOVATION
+        </p>
+
+        <h1>
+          Welcome to <span>STI Academy.</span>
+        </h1>
+
+        <p class="hero-text">
+          Learn practical digital skills, build real-world experience,
+          and prepare yourself for the opportunities of tomorrow.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#register" class="btn primary">
+            REGISTER NOW
+          </a>
+
+          <a href="#quiz" class="btn secondary">
+            TAKE QUIZ
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-card">
+
+        <div class="glow"></div>
+
+        <span>
+          YOUR FUTURE
+        </span>
+
+        <strong>
+          STARTS<br>
+          WITH A SKILL.
+        </strong>
+
+        <p>
+          Learn. Create. Grow.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- STATS -->
+    <section class="stats">
+
+      <div>
+        <strong>05</strong>
+        <span>Career Courses</span>
+      </div>
+
+      <div>
+        <strong>LIVE</strong>
+        <span>Interactive Classes</span>
+      </div>
+
+      <div>
+        <strong>₦10K</strong>
+        <span>Course Fee</span>
+      </div>
+
+      <div>
+        <strong>100%</strong>
+        <span>Practical Learning</span>
+      </div>
+
+    </section>
+
+
+    <!-- CAREER QUIZ -->
+    <section id="quiz" class="section quiz-section">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          FIND YOUR PATH
+        </p>
+
+        <h2>
+          Which digital skill fits you?
+        </h2>
+
+        <p>
+          Answer 10 simple questions about yourself and we'll recommend
+          the STI Academy course that best matches your personality and interests.
+        </p>
+
+      </div>
+
+
+      <div class="quiz-box">
+
+
+        <!-- QUIZ START -->
+        <div id="quiz-start">
+
+          <div class="quiz-icon">
+            ?
+          </div>
+
+          <h3>
+            Take the STI Career Quiz
+          </h3>
+
+          <p>
+            There are no right or wrong answers. Just be yourself.
+          </p>
+
+          <button
+            type="button"
+            class="btn primary"
+            onclick="startQuiz()">
+
+            START QUIZ
+
+          </button>
+
+        </div>
+
+
+        <!-- QUIZ QUESTIONS -->
+        <div id="quiz-container" class="hidden">
+
+          <div class="quiz-top">
+
+            <span id="quiz-progress">
+              Question 1 of 10
+            </span>
+
+          </div>
+
+          <h3 id="quiz-question">
+            Question
+          </h3>
+
+          <div id="quiz-options"></div>
+
+          <button
+            type="button"
+            id="quiz-next"
+            class="btn primary hidden">
+
+            NEXT
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- QUIZ RESULT POPUP -->
+    <div id="result-popup" class="popup hidden">
+
+      <div class="popup-content">
+
+        <button
+          type="button"
+          class="close-popup"
+          onclick="closeResult()">
+
+          ×
+
+        </button>
+
+        <p class="eyebrow">
+          YOUR RESULT
+        </p>
+
+        <h2>
+          Your recommended course is
+        </h2>
+
+        <div id="recommended-course"></div>
+
+        <p id="recommendation-text"></p>
+
+        <button
+          type="button"
+          class="btn primary"
+          id="result-register-btn"
+          onclick="registerRecommendedCourse()">
+
+          REGISTER FOR THIS COURSE
+
+        </button>
+
+        <button
+          type="button"
+          class="retake-btn"
+          onclick="startQuiz()">
+
+          RETAKE QUIZ
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="section about-section">
+
+      <div class="about-grid">
+
+        <div>
+
+          <p class="eyebrow">
+            ABOUT STI
+          </p>
+
+          <h2>
+            Skills that move you forward.
+          </h2>
+
+        </div>
+
+
+        <div>
+
+          <p>
+            STI Academy is a practical technology and digital skills
+            academy focused on helping students develop skills they can
+            actually use in the real world.
+          </p>
+
+          <p>
+            Whether you're interested in building websites, designing
+            graphics, creating videos or growing brands online, STI gives
+            you a practical environment to learn and develop.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+    <section class="section learning-section">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          HOW IT WORKS
+        </p>
+
+        <h2>
+          Learn differently.
+        </h2>
+
+      </div>
+
+
+      <div class="steps">
+
+
+        <div class="step">
+
+          <span>
+            01
+          </span>
+
+          <h3>
+            Choose Your Skill
+          </h3>
+
+          <p>
+            Pick the course that matches your interests and career goals.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <span>
+            02
+          </span>
+
+          <h3>
+            Join Live Classes
+          </h3>
+
+          <p>
+            Attend interactive live classes and learn directly with your tutor.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <span>
+            03
+          </span>
+
+          <h3>
+            Practice
+          </h3>
+
+          <p>
+            Work on practical tasks and projects to develop your skills.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <span>
+            04
+          </span>
+
+          <h3>
+            Never Miss a Class
+          </h3>
+
+          <p>
+            Missed a live class? The recording will be shared in your
+            course group chat.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- COURSES -->
+    <section id="courses" class="section courses-section">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          WHAT YOU CAN LEARN
+        </p>
+
+        <h2>
+          Our courses.
+        </h2>
+
+        <p>
+          Choose a digital skill and start building your future.
+        </p>
+
+      </div>
+
+
+      <!-- JavaScript loads courses here -->
+      <div
+        id="course-list"
+        class="course-grid">
+      </div>
+
+    </section>
+
+
+    <!-- COURSE DETAILS -->
+    <section
+      id="course-details"
+      class="section course-details hidden">
+
+      <div id="details-content"></div>
+
+    </section>
+
+
+    <!-- REGISTRATION -->
+    <section id="register" class="section register-section">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          START YOUR JOURNEY
+        </p>
+
+        <h2>
+          Register for STI Academy.
+        </h2>
+
+        <p>
+          Make your payment, complete your details,
+          and send your registration to STI Admin.
+        </p>
+
+      </div>
+
+
+      <div class="registration-card">
+
+
+        <!-- PAYMENT DETAILS -->
+        <div class="payment-card">
+
+          <p class="eyebrow">
+            STEP 01 — MAKE PAYMENT
+          </p>
+
+          <h3>
+            Pay ₦10,000
+          </h3>
+
+          <p>
+            Make your registration payment using the account details below.
+          </p>
+
+
+          <div class="payment-detail">
+
+            <span>
+              Bank
+            </span>
+
+            <strong>
+              Opay
+            </strong>
+
+          </div>
+
+
+          <div class="payment-detail">
+
+            <span>
+              Account Number
+            </span>
+
+            <strong>
+              9159641570
+            </strong>
+
+          </div>
+
+
+          <div class="payment-detail">
+
+            <span>
+              Account Name
+            </span>
+
+            <strong>
+              LAWRETTA OSAYAMEN OGBOE
+            </strong>
+
+          </div>
+
+
+          <p class="payment-note">
+
+            After making payment, keep your Opay transaction reference
+            and payment screenshot ready. You will need them to complete
+            your registration.
+
+          </p>
+
+        </div>
+
+
+        <!-- REGISTRATION FORM -->
+        <form id="registration-form">
+
+
+          <p class="eyebrow">
+            STEP 02 — YOUR DETAILS
+          </p>
+
+
+          <!-- NAME + PHONE -->
+          <div class="form-row">
+
+            <div class="form-group">
+
+              <label for="name">
+                Full Name
+              </label>
+
+              <input
+                type="text"
+                id="name"
+                placeholder="Your full name"
+                required>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="phone">
+                Phone Number
+              </label>
+
+              <input
+                type="tel"
+                id="phone"
+                placeholder="08012345678"
+                required>
+
+            </div>
+
+          </div>
+
+
+          <!-- EMAIL -->
+          <div class="form-group">
+
+            <label for="email">
+              Email Address
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              placeholder="you@example.com"
+              required>
+
+          </div>
+
+
+          <!-- COURSE -->
+          <div class="form-group">
+
+            <label for="course">
+              Select Course
+            </label>
+
+            <select
+              id="course"
+              required>
+
+              <option value="">
+                Choose a course
+              </option>
+
+              <option value="Web Development">
+                Web Development
+              </option>
+
+              <option value="Web Design">
+                Web Design
+              </option>
+
+              <option value="Graphic Design">
+                Graphic Design
+              </option>
+
+              <option value="Video Editing">
+                Video Editing
+              </option>
+
+              <option value="Social Media Management">
+                Social Media Management
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- PAYMENT REFERENCE -->
+          <div class="form-group">
+
+            <label for="reference">
+              Payment Reference
+            </label>
+
+            <input
+              type="text"
+              id="reference"
+              placeholder="Transaction: 1234567890"
+              required>
+
+            <small>
+              Enter the transaction reference shown on your Opay payment receipt.
+            </small>
+
+          </div>
+
+
+          <!-- FINAL INSTRUCTION -->
+          <div class="payment-proof-notice">
+
+            <p>
+              After clicking the SEND PROOF TO ADMIN ON WHATSAPP button,
+              WhatsApp will open with your registration details. Attach
+              your payment screenshot to the WhatsApp message before
+              sending it to STI Admin.
+            </p>
+
+          </div>
+
+
+          <!-- FINAL ACTION -->
+          <button
+            type="submit"
+            id="send-registration"
+            class="btn primary submit-btn">
+
+            SEND PROOF TO ADMIN ON WHATSAPP
+
+          </button>
+
+
+          <!-- FORM MESSAGE -->
+          <p
+            id="form-message"
+            class="form-message">
+          </p>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT ADMIN -->
+    <section class="section contact-section">
+
+      <div>
+
+        <p class="eyebrow">
+          NEED HELP?
+        </p>
+
+        <h2>
+          Talk to STI Admin.
+        </h2>
+
+        <p>
+          Have questions about registration, payment or any of our courses?
+          Contact the admin directly on WhatsApp.
+        </p>
+
+        <a
+          href="https://wa.me/2348131525874?text=Hello%20STI%20Academy%20Admin%2C%20I%20need%20more%20information%20about%20the%20academy."
+          target="_blank"
+          rel="noopener"
+          class="btn primary"
+          id="contact-admin">
+
+          CONTACT ADMIN ON WHATSAPP
+
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="logo">
+
+      <span>
+        STI
+      </span>
+
+      Academy
+
+    </div>
+
+    <p>
+      School of Technology & Innovation
+    </p>
+
+    <p>
+      © 2026 STI Academy. All rights reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
+
+</body>
+</html>
