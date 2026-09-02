@@ -1291,44 +1291,6 @@ function selectCourse(courseName) {
 
 
 /* =========================================
-   RECEIPT FILE NAME
-========================================= */
-
-function setupReceiptUpload() {
-
-  const receipt =
-    document.getElementById("receipt");
-
-  const receiptName =
-    document.getElementById("receipt-name");
-
-
-  if (!receipt || !receiptName) return;
-
-
-  receipt.addEventListener(
-    "change",
-    function () {
-
-      if (this.files && this.files.length > 0) {
-
-        receiptName.textContent =
-          this.files[0].name;
-
-      } else {
-
-        receiptName.textContent =
-          "No receipt selected";
-
-      }
-
-    }
-  );
-
-}
-
-
-/* =========================================
    REGISTRATION FORM
 ========================================= */
 
@@ -1363,39 +1325,15 @@ function setupRegistrationForm() {
       const reference =
         document.getElementById("reference").value.trim();
 
-      const receipt =
-        document.getElementById("receipt");
-
 
       const message =
         document.getElementById("form-message");
 
 
-      /* Check receipt */
-
-      if (
-        !receipt.files ||
-        receipt.files.length === 0
-      ) {
-
-        if (message) {
-
-          message.textContent =
-            "Please select your payment receipt first.";
-
-          message.className =
-            "form-message error";
-
-        }
-
-        return;
-
-      }
-
-
       /*
         WhatsApp cannot automatically attach
-        a file selected from a normal website.
+        a payment receipt from a normal website.
+        The student will attach it manually.
       */
 
       const whatsappMessage =
@@ -1410,7 +1348,7 @@ Email: ${email}
 Course: ${course}
 Payment Reference: ${reference}
 
-I have made the ₦10,000 payment and selected my payment receipt on the registration form.
+I have made the ₦10,000 payment.
 
 Please confirm my payment and registration.
 
@@ -1425,7 +1363,7 @@ I will attach my payment receipt in this WhatsApp chat.`;
       if (message) {
 
         message.textContent =
-          "Opening WhatsApp... Please attach your receipt before sending.";
+          "Opening WhatsApp... Please attach your payment receipt before sending.";
 
         message.className =
           "form-message success";
@@ -1525,8 +1463,6 @@ document.addEventListener(
   function () {
 
     displayCourses();
-
-    setupReceiptUpload();
 
     setupRegistrationForm();
 
