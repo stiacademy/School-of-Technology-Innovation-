@@ -1,176 +1,641 @@
-/* =========================================================
-   STI ACADEMY REGISTRATION WEBSITE
-   script.js
-   ========================================================= */
+/* =========================================
+   STI ACADEMY - SCRIPT
+========================================= */
 
 
-/* =========================================================
-   COURSE DATA
-   ========================================================= */
+/* =========================================
+   COURSES
+========================================= */
 
 const courses = [
   {
     name: "Web Development",
-    duration: "6 Months",
+    short: "Build websites and digital products.",
     description:
-      "Learn how to build modern, responsive websites using HTML, CSS, JavaScript and other essential web technologies."
+      "Learn how to create functional websites and digital experiences using modern web development skills.",
+    icon: "</>",
+    color: "development"
   },
+
   {
     name: "Web Design",
-    duration: "6 Months",
+    short: "Design beautiful digital experiences.",
     description:
-      "Learn how to create attractive, responsive and user-friendly website designs."
+      "Learn how to plan and design attractive, user-friendly websites and digital interfaces.",
+    icon: "◈",
+    color: "webdesign"
   },
+
   {
     name: "Graphic Design",
-    duration: "1 Month",
+    short: "Turn ideas into powerful visuals.",
     description:
-      "Learn the fundamentals of graphic design and how to create professional visual content."
+      "Learn how to create professional graphics, visual identities and digital designs.",
+    icon: "✦",
+    color: "graphic"
   },
+
   {
     name: "Video Editing",
-    duration: "1 Month",
+    short: "Create engaging visual stories.",
     description:
-      "Learn how to edit engaging and professional videos for social media, businesses and personal projects."
+      "Learn how to edit videos, create engaging content and turn raw footage into professional visual stories.",
+    icon: "▶",
+    color: "video"
   },
+
   {
     name: "Social Media Management",
-    duration: "1 Month",
+    short: "Help brands grow online.",
     description:
-      "Learn how to manage social media pages, create content, grow audiences and handle online communities."
+      "Learn how to manage social media pages, create content, engage audiences and help brands grow online.",
+    icon: "@",
+    color: "social"
   }
 ];
 
 
-/* =========================================================
-   QUIZ DATA
-   ========================================================= */
+/* =========================================
+   QUIZ QUESTIONS
+========================================= */
 
 const quizQuestions = [
+
   {
-    question: "Which of these sounds most interesting to you?",
+    question: "What do you usually enjoy doing when you have free time?",
     options: [
-      "Building websites",
-      "Creating beautiful designs",
-      "Editing videos",
-      "Managing social media"
-    ],
-    scores: [5, 3, 2, 1]
+      {
+        text: "Figuring things out or learning how things work",
+        scores: {
+          webdev: 3,
+          webdesign: 1,
+          graphic: 0,
+          video: 0,
+          social: 1
+        }
+      },
+      {
+        text: "Drawing, designing or making things look beautiful",
+        scores: {
+          webdev: 0,
+          webdesign: 3,
+          graphic: 3,
+          video: 1,
+          social: 0
+        }
+      },
+      {
+        text: "Watching movies, creating content or telling stories",
+        scores: {
+          webdev: 0,
+          webdesign: 1,
+          graphic: 1,
+          video: 3,
+          social: 2
+        }
+      },
+      {
+        text: "Browsing social media and interacting with people",
+        scores: {
+          webdev: 0,
+          webdesign: 0,
+          graphic: 1,
+          video: 1,
+          social: 3
+        }
+      },
+      {
+        text: "Exploring new ideas and experimenting",
+        scores: {
+          webdev: 2,
+          webdesign: 2,
+          graphic: 1,
+          video: 2,
+          social: 1
+        }
+      }
+    ]
   },
 
   {
-    question: "What would you enjoy doing most?",
+    question: "How would you describe yourself?",
     options: [
-      "Writing code",
-      "Creating graphics",
-      "Editing videos",
-      "Creating social media content"
-    ],
-    scores: [5, 4, 3, 2]
+      {
+        text: "Logical and curious",
+        scores: {
+          webdev: 3,
+          webdesign: 1,
+          graphic: 0,
+          video: 0,
+          social: 1
+        }
+      },
+      {
+        text: "Creative and imaginative",
+        scores: {
+          webdev: 0,
+          webdesign: 3,
+          graphic: 3,
+          video: 2,
+          social: 0
+        }
+      },
+      {
+        text: "Expressive and energetic",
+        scores: {
+          webdev: 0,
+          webdesign: 1,
+          graphic: 1,
+          video: 3,
+          social: 2
+        }
+      },
+      {
+        text: "Social and communicative",
+        scores: {
+          webdev: 0,
+          webdesign: 0,
+          graphic: 0,
+          video: 1,
+          social: 3
+        }
+      },
+      {
+        text: "A mixture of everything",
+        scores: {
+          webdev: 1,
+          webdesign: 1,
+          graphic: 1,
+          video: 1,
+          social: 1
+        }
+      }
+    ]
   },
 
   {
-    question: "Which activity sounds more exciting?",
+    question: "When you're given a difficult task, what's your first reaction?",
     options: [
-      "Making a website work",
-      "Designing a poster",
-      "Putting clips together",
-      "Growing a social media page"
-    ],
-    scores: [5, 4, 3, 2]
+      {
+        text: "I break it down and solve it step by step",
+        scores: {
+          webdev: 3,
+          webdesign: 1,
+          graphic: 0,
+          video: 0,
+          social: 1
+        }
+      },
+      {
+        text: "I think of a creative way to approach it",
+        scores: {
+          webdev: 1,
+          webdesign: 3,
+          graphic: 3,
+          video: 2,
+          social: 1
+        }
+      },
+      {
+        text: "I try different things until something works",
+        scores: {
+          webdev: 2,
+          webdesign: 2,
+          graphic: 1,
+          video: 3,
+          social: 1
+        }
+      },
+      {
+        text: "I ask people for ideas or feedback",
+        scores: {
+          webdev: 0,
+          webdesign: 1,
+          graphic: 1,
+          video: 1,
+          social: 3
+        }
+      },
+      {
+        text: "I research and learn more about it",
+        scores: {
+          webdev: 3,
+          webdesign: 1,
+          graphic: 1,
+          video: 1,
+          social: 2
+        }
+      }
+    ]
   },
 
   {
-    question: "What type of work would you prefer?",
+    question: "Which environment would you enjoy working in most?",
     options: [
-      "Technical work",
-      "Creative visual work",
-      "Video and storytelling",
-      "Communication and marketing"
-    ],
-    scores: [5, 4, 3, 2]
+      {
+        text: "Quiet and focused",
+        scores: {
+          webdev: 3,
+          webdesign: 2,
+          graphic: 1,
+          video: 1,
+          social: 0
+        }
+      },
+      {
+        text: "Creative and flexible",
+        scores: {
+          webdev: 1,
+          webdesign: 3,
+          graphic: 3,
+          video: 2,
+          social: 1
+        }
+      },
+      {
+        text: "Fast-paced and exciting",
+        scores: {
+          webdev: 1,
+          webdesign: 1,
+          graphic: 1,
+          video: 3,
+          social: 2
+        }
+      },
+      {
+        text: "Social and interactive",
+        scores: {
+          webdev: 0,
+          webdesign: 1,
+          graphic: 1,
+          video: 2,
+          social: 3
+        }
+      },
+      {
+        text: "A combination of different environments",
+        scores: {
+          webdev: 1,
+          webdesign: 2,
+          graphic: 1,
+          video: 2,
+          social: 2
+        }
+      }
+    ]
   },
 
   {
-    question: "Which skill would you like to develop?",
+    question: "What gives you the most satisfaction?",
     options: [
-      "Programming",
-      "Design",
-      "Video production",
-      "Digital marketing"
-    ],
-    scores: [5, 4, 3, 2]
+      {
+        text: "Solving a problem",
+        scores: {
+          webdev: 3,
+          webdesign: 1,
+          graphic: 0,
+          video: 0,
+          social: 1
+        }
+      },
+      {
+        text: "Creating something beautiful",
+        scores: {
+          webdev: 0,
+          webdesign: 3,
+          graphic: 3,
+          video: 1,
+          social: 0
+        }
+      },
+      {
+        text: "Telling a story or entertaining people",
+        scores: {
+          webdev: 0,
+          webdesign: 1,
+          graphic: 1,
+          video: 3,
+          social: 2
+        }
+      },
+      {
+        text: "Connecting with people",
+        scores: {
+          webdev: 0,
+          webdesign: 0,
+          graphic: 0,
+          video: 1,
+          social: 3
+        }
+      },
+      {
+        text: "Turning an idea into something real",
+        scores: {
+          webdev: 2,
+          webdesign: 2,
+          graphic: 2,
+          video: 2,
+          social: 1
+        }
+      }
+    ]
   },
 
   {
-    question: "What would you rather create?",
+    question: "If you had to create something for a new business, which part would interest you most?",
     options: [
-      "A website",
-      "A brand design",
-      "A video",
-      "A social media campaign"
-    ],
-    scores: [5, 4, 3, 2]
+      {
+        text: "Making the system work",
+        scores: {
+          webdev: 3,
+          webdesign: 1,
+          graphic: 0,
+          video: 0,
+          social: 0
+        }
+      },
+      {
+        text: "Making the brand look good",
+        scores: {
+          webdev: 0,
+          webdesign: 3,
+          graphic: 3,
+          video: 1,
+          social: 1
+        }
+      },
+      {
+        text: "Creating promotional content",
+        scores: {
+          webdev: 0,
+          webdesign: 1,
+          graphic: 1,
+          video: 3,
+          social: 2
+        }
+      },
+      {
+        text: "Getting people interested in the business",
+        scores: {
+          webdev: 0,
+          webdesign: 0,
+          graphic: 1,
+          video: 1,
+          social: 3
+        }
+      },
+      {
+        text: "Planning the whole digital experience",
+        scores: {
+          webdev: 2,
+          webdesign: 3,
+          graphic: 1,
+          video: 1,
+          social: 2
+        }
+      }
+    ]
   },
 
   {
-    question: "Which type of project sounds best?",
+    question: "How do you normally express your ideas?",
     options: [
-      "Building a complete website",
-      "Designing a complete brand identity",
-      "Creating a professional video",
-      "Managing a business social media page"
-    ],
-    scores: [5, 4, 3, 2]
+      {
+        text: "Through logic and explanations",
+        scores: {
+          webdev: 3,
+          webdesign: 1,
+          graphic: 0,
+          video: 0,
+          social: 1
+        }
+      },
+      {
+        text: "Through images and designs",
+        scores: {
+          webdev: 0,
+          webdesign: 3,
+          graphic: 3,
+          video: 1,
+          social: 0
+        }
+      },
+      {
+        text: "Through videos and storytelling",
+        scores: {
+          webdev: 0,
+          webdesign: 1,
+          graphic: 1,
+          video: 3,
+          social: 2
+        }
+      },
+      {
+        text: "Through conversations and social media",
+        scores: {
+          webdev: 0,
+          webdesign: 0,
+          graphic: 1,
+          video: 1,
+          social: 3
+        }
+      },
+      {
+        text: "Through a combination of different methods",
+        scores: {
+          webdev: 1,
+          webdesign: 2,
+          graphic: 2,
+          video: 2,
+          social: 2
+        }
+      }
+    ]
   },
 
   {
-    question: "What do you think you are naturally good at?",
+    question: "What kind of achievement would make you proudest?",
     options: [
-      "Problem solving",
-      "Creativity",
-      "Storytelling",
-      "Communication"
-    ],
-    scores: [5, 4, 3, 2]
+      {
+        text: "Building something that actually works",
+        scores: {
+          webdev: 3,
+          webdesign: 1,
+          graphic: 0,
+          video: 0,
+          social: 1
+        }
+      },
+      {
+        text: "Creating a design people love",
+        scores: {
+          webdev: 0,
+          webdesign: 3,
+          graphic: 3,
+          video: 1,
+          social: 0
+        }
+      },
+      {
+        text: "Creating a video people can't stop watching",
+        scores: {
+          webdev: 0,
+          webdesign: 0,
+          graphic: 1,
+          video: 3,
+          social: 2
+        }
+      },
+      {
+        text: "Growing a page or brand successfully",
+        scores: {
+          webdev: 0,
+          webdesign: 0,
+          graphic: 1,
+          video: 2,
+          social: 3
+        }
+      },
+      {
+        text: "Creating something completely new",
+        scores: {
+          webdev: 2,
+          webdesign: 2,
+          graphic: 2,
+          video: 2,
+          social: 1
+        }
+      }
+    ]
   },
 
   {
-    question: "Which environment would you prefer?",
+    question: "What matters most to you when choosing a career?",
     options: [
-      "Working with technology",
-      "Working with visuals",
-      "Working with videos",
-      "Working with people and audiences"
-    ],
-    scores: [5, 4, 3, 2]
+      {
+        text: "Problem-solving and intellectual challenge",
+        scores: {
+          webdev: 3,
+          webdesign: 1,
+          graphic: 0,
+          video: 0,
+          social: 1
+        }
+      },
+      {
+        text: "Creativity and self-expression",
+        scores: {
+          webdev: 0,
+          webdesign: 3,
+          graphic: 3,
+          video: 2,
+          social: 1
+        }
+      },
+      {
+        text: "Freedom to create and tell stories",
+        scores: {
+          webdev: 0,
+          webdesign: 1,
+          graphic: 1,
+          video: 3,
+          social: 2
+        }
+      },
+      {
+        text: "Communication and influence",
+        scores: {
+          webdev: 0,
+          webdesign: 0,
+          graphic: 1,
+          video: 1,
+          social: 3
+        }
+      },
+      {
+        text: "Flexibility and opportunities to grow",
+        scores: {
+          webdev: 2,
+          webdesign: 2,
+          graphic: 1,
+          video: 2,
+          social: 2
+        }
+      }
+    ]
   },
 
   {
-    question: "What would you like to achieve with your new skill?",
+    question: "Imagine you become extremely skilled at one thing. Which outcome would excite you most?",
     options: [
-      "Build websites",
-      "Create professional designs",
-      "Create amazing videos",
-      "Manage social media professionally"
-    ],
-    scores: [5, 4, 3, 2]
+      {
+        text: "Being able to build useful digital products",
+        scores: {
+          webdev: 3,
+          webdesign: 1,
+          graphic: 0,
+          video: 0,
+          social: 1
+        }
+      },
+      {
+        text: "Creating beautiful digital experiences",
+        scores: {
+          webdev: 1,
+          webdesign: 3,
+          graphic: 2,
+          video: 1,
+          social: 0
+        }
+      },
+      {
+        text: "Producing professional visual content",
+        scores: {
+          webdev: 0,
+          webdesign: 1,
+          graphic: 2,
+          video: 3,
+          social: 1
+        }
+      },
+      {
+        text: "Helping brands become successful online",
+        scores: {
+          webdev: 0,
+          webdesign: 0,
+          graphic: 1,
+          video: 2,
+          social: 3
+        }
+      },
+      {
+        text: "Having a versatile digital skillset",
+        scores: {
+          webdev: 2,
+          webdesign: 2,
+          graphic: 2,
+          video: 2,
+          social: 2
+        }
+      }
+    ]
   }
+
 ];
 
 
-/* =========================================================
+/* =========================================
    QUIZ VARIABLES
-   ========================================================= */
+========================================= */
 
 let currentQuestion = 0;
 
 let quizScores = {
-  "Web Development": 0,
-  "Web Design": 0,
-  "Graphic Design": 0,
-  "Video Editing": 0,
-  "Social Media Management": 0
+  webdev: 0,
+  webdesign: 0,
+  graphic: 0,
+  video: 0,
+  social: 0
 };
 
 let selectedAnswers = [];
@@ -178,772 +643,941 @@ let selectedAnswers = [];
 let recommendedCourse = "";
 
 
-/* =========================================================
+/* =========================================
    START QUIZ
-   ========================================================= */
+========================================= */
 
 function startQuiz() {
+
   currentQuestion = 0;
 
   quizScores = {
-    "Web Development": 0,
-    "Web Design": 0,
-    "Graphic Design": 0,
-    "Video Editing": 0,
-    "Social Media Management": 0
+    webdev: 0,
+    webdesign: 0,
+    graphic: 0,
+    video: 0,
+    social: 0
   };
 
   selectedAnswers = [];
 
-  const quizStart = document.getElementById("quiz-start");
-  const quizContainer = document.getElementById("quiz-container");
+  const start =
+    document.getElementById("quiz-start");
 
-  if (quizStart) {
-    quizStart.classList.add("hidden");
+  const container =
+    document.getElementById("quiz-container");
+
+  const popup =
+    document.getElementById("result-popup");
+
+  if (start) {
+    start.classList.add("hidden");
   }
 
-  if (quizContainer) {
-    quizContainer.classList.remove("hidden");
+  if (popup) {
+    popup.classList.add("hidden");
+  }
+
+  if (container) {
+    container.classList.remove("hidden");
   }
 
   showQuestion();
+
+  document
+    .getElementById("quiz")
+    ?.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
 }
 
 
-/* =========================================================
+/* =========================================
    SHOW QUESTION
-   ========================================================= */
+========================================= */
 
 function showQuestion() {
-  const quizContainer = document.getElementById("quiz-container");
 
-  if (!quizContainer) {
-    return;
-  }
+  const container =
+    document.getElementById("quiz-container");
 
-  const questionData = quizQuestions[currentQuestion];
+  if (!container) return;
 
-  if (!questionData) {
-    showQuizResult();
-    return;
-  }
+  const question =
+    quizQuestions[currentQuestion];
 
-  const progress = Math.round(
-    ((currentQuestion + 1) / quizQuestions.length) * 100
+  if (!question) return;
+
+  const progress =
+    ((currentQuestion + 1) /
+      quizQuestions.length) * 100;
+
+  let optionsHTML = "";
+
+  question.options.forEach(
+    (option, index) => {
+
+      optionsHTML += `
+        <button
+          type="button"
+          class="quiz-option"
+          onclick="selectAnswer(${index})"
+        >
+          <span class="option-letter">
+            ${String.fromCharCode(65 + index)}
+          </span>
+
+          <span>
+            ${option.text}
+          </span>
+        </button>
+      `;
+
+    }
   );
 
-  quizContainer.innerHTML = `
-    <div class="quiz-question-card">
+  container.innerHTML = `
 
-      <div class="quiz-progress">
-        <div class="quiz-progress-bar">
-          <div
-            class="quiz-progress-fill"
-            style="width: ${progress}%;">
-          </div>
-        </div>
+    <div class="quiz-progress">
 
-        <p>
-          Question ${currentQuestion + 1} of ${quizQuestions.length}
-        </p>
+      <div class="quiz-progress-top">
+
+        <span>
+          Question ${currentQuestion + 1}
+          of ${quizQuestions.length}
+        </span>
+
+        <span>
+          ${Math.round(progress)}%
+        </span>
+
       </div>
 
-      <h3>${questionData.question}</h3>
+      <div class="progress-track">
 
-      <div class="quiz-options"></div>
+        <div
+          class="progress-bar"
+          style="width:${progress}%"
+        ></div>
+
+      </div>
 
     </div>
+
+
+    <div class="question-box">
+
+      <p class="question-number">
+        QUESTION
+        ${String(currentQuestion + 1).padStart(2, "0")}
+      </p>
+
+      <h3>
+        ${question.question}
+      </h3>
+
+      <div class="quiz-options">
+        ${optionsHTML}
+      </div>
+
+    </div>
+
   `;
-
-  const optionsContainer =
-    quizContainer.querySelector(".quiz-options");
-
-  questionData.options.forEach((option, index) => {
-    const button = document.createElement("button");
-
-    button.type = "button";
-    button.className = "quiz-option";
-    button.textContent = option;
-
-    button.addEventListener("click", function () {
-      selectAnswer(index);
-    });
-
-    optionsContainer.appendChild(button);
-  });
 }
 
 
-/* =========================================================
+/* =========================================
    SELECT ANSWER
-   ========================================================= */
+========================================= */
 
-function selectAnswer(index) {
-  const questionData = quizQuestions[currentQuestion];
+function selectAnswer(optionIndex) {
 
-  if (!questionData) {
-    return;
-  }
+  const question =
+    quizQuestions[currentQuestion];
 
-  selectedAnswers[currentQuestion] = index;
+  if (!question) return;
 
-  const score = questionData.scores[index];
+  const selectedOption =
+    question.options[optionIndex];
 
-  /*
-    Each question contributes to the course
-    represented by the answer position.
-  */
+  if (!selectedOption) return;
 
-  const courseByIndex = [
-    "Web Development",
-    "Graphic Design",
-    "Video Editing",
-    "Social Media Management"
-  ];
+  Object.keys(selectedOption.scores)
+    .forEach(course => {
 
-  const selectedCourse = courseByIndex[index];
+      quizScores[course] +=
+        selectedOption.scores[course];
 
-  if (selectedCourse) {
-    quizScores[selectedCourse] += score;
-  }
+    });
+
+  selectedAnswers.push(optionIndex);
 
   currentQuestion++;
 
-  if (currentQuestion < quizQuestions.length) {
-    showQuestion();
-  } else {
+  if (
+    currentQuestion >=
+    quizQuestions.length
+  ) {
+
     showQuizResult();
+
+  } else {
+
+    showQuestion();
+
   }
 }
 
 
-/* =========================================================
-   GET RECOMMENDED COURSE
-   ========================================================= */
+/* =========================================
+   CALCULATE RESULT
+========================================= */
 
 function getRecommendedCourse() {
-  let highestScore = -1;
-  let bestCourse = "Web Development";
 
-  Object.keys(quizScores).forEach(function (course) {
-    if (quizScores[course] > highestScore) {
-      highestScore = quizScores[course];
-      bestCourse = course;
+  const scores = quizScores;
+
+  const highestScore =
+    Math.max(...Object.values(scores));
+
+  const winners =
+    Object.keys(scores).filter(
+      key => scores[key] === highestScore
+    );
+
+  if (winners.length > 1) {
+
+    const preferenceOrder = [
+      "webdev",
+      "webdesign",
+      "graphic",
+      "video",
+      "social"
+    ];
+
+    for (const key of preferenceOrder) {
+
+      if (winners.includes(key)) {
+        return key;
+      }
+
     }
-  });
+  }
 
-  recommendedCourse = bestCourse;
-
-  return bestCourse;
+  return winners[0];
 }
 
 
-/* =========================================================
-   RECOMMENDATION TEXT
-   ========================================================= */
+/* =========================================
+   RESULT TEXT
+========================================= */
 
-function getRecommendationText(course) {
-  const texts = {
-    "Web Development":
-      "Based on your answers, Web Development may be a great fit for you. You may enjoy solving problems, working with technology and building functional websites.",
+function getRecommendationText(courseKey) {
 
-    "Web Design":
-      "Based on your answers, Web Design may be a great fit for you. You may enjoy creating attractive layouts and making websites visually appealing and easy to use.",
+  const explanations = {
 
-    "Graphic Design":
-      "Based on your answers, Graphic Design may be a great fit for you. You may enjoy creativity, visual communication and creating professional designs.",
+    webdev:
+      "Your answers show strong problem-solving, curiosity and an interest in understanding how things work. Web Development could be a great fit because it gives you the opportunity to turn ideas into functional digital products.",
 
-    "Video Editing":
-      "Based on your answers, Video Editing may be a great fit for you. You may enjoy storytelling, working with visuals and creating engaging videos.",
+    webdesign:
+      "Your answers show a strong interest in creativity, visual thinking and creating experiences that people enjoy using. Web Design could be a great fit for your strengths.",
 
-    "Social Media Management":
-      "Based on your answers, Social Media Management may be a great fit for you. You may enjoy communication, content creation and growing online communities."
+    graphic:
+      "Your answers show strong creative instincts and an interest in visual communication. Graphic Design could be a great fit because it allows you to turn ideas into powerful visual designs.",
+
+    video:
+      "Your answers show an interest in creativity, storytelling and visual content. Video Editing could be a great fit because it allows you to communicate ideas through engaging videos.",
+
+    social:
+      "Your answers show strong communication, people skills and an interest in online communities and brands. Social Media Management could be a great fit for you."
+
   };
 
-  return (
-    texts[course] ||
-    "Based on your answers, this course may be a good fit for you."
-  );
+  return explanations[courseKey] || "";
 }
 
 
-/* =========================================================
+/* =========================================
    SHOW QUIZ RESULT
-   ========================================================= */
+========================================= */
 
 function showQuizResult() {
-  const course = getRecommendedCourse();
 
-  const resultPopup = document.getElementById("result-popup");
-  const recommendedCourseElement =
-    document.getElementById("recommended-course");
+  const resultKey =
+    getRecommendedCourse();
 
-  const recommendationText =
-    document.getElementById("recommendation-text");
+  recommendedCourse = resultKey;
 
-  if (recommendedCourseElement) {
-    recommendedCourseElement.textContent = course;
+  const names = {
+
+    webdev: "Web Development",
+
+    webdesign: "Web Design",
+
+    graphic: "Graphic Design",
+
+    video: "Video Editing",
+
+    social: "Social Media Management"
+
+  };
+
+  const courseName =
+    names[resultKey];
+
+  const courseElement =
+    document.getElementById(
+      "recommended-course"
+    );
+
+  const textElement =
+    document.getElementById(
+      "recommendation-text"
+    );
+
+  const popup =
+    document.getElementById(
+      "result-popup"
+    );
+
+  if (courseElement) {
+
+    courseElement.innerHTML = `
+      <div class="result-course">
+        ${courseName}
+      </div>
+    `;
+
   }
 
-  if (recommendationText) {
-    recommendationText.textContent =
-      getRecommendationText(course);
+  if (textElement) {
+
+    textElement.textContent =
+      getRecommendationText(resultKey);
+
   }
 
-  if (resultPopup) {
-    resultPopup.classList.remove("hidden");
+  if (popup) {
 
-    resultPopup.scrollIntoView({
+    popup.classList.remove("hidden");
+
+    popup.scrollIntoView({
       behavior: "smooth",
       block: "center"
     });
+
   }
 }
 
 
-/* =========================================================
-   CLOSE QUIZ RESULT
-   ========================================================= */
+/* =========================================
+   CLOSE RESULT
+========================================= */
 
 function closeResult() {
-  const resultPopup = document.getElementById("result-popup");
 
-  if (resultPopup) {
-    resultPopup.classList.add("hidden");
+  const popup =
+    document.getElementById(
+      "result-popup"
+    );
+
+  if (popup) {
+
+    popup.classList.add("hidden");
+
   }
 }
 
 
-/* =========================================================
+/* =========================================
    REGISTER RECOMMENDED COURSE
-   ========================================================= */
+========================================= */
 
 function registerRecommendedCourse() {
-  if (!recommendedCourse) {
-    return;
-  }
 
-  const courseSelect = document.getElementById("course");
+  const courseNames = {
 
-  if (courseSelect) {
-    courseSelect.value = recommendedCourse;
+    webdev: "Web Development",
+
+    webdesign: "Web Design",
+
+    graphic: "Graphic Design",
+
+    video: "Video Editing",
+
+    social: "Social Media Management"
+
+  };
+
+  const course =
+    courseNames[recommendedCourse];
+
+  const courseSelect =
+    document.getElementById("course");
+
+  if (
+    courseSelect &&
+    course
+  ) {
+
+    courseSelect.value =
+      course;
+
   }
 
   closeResult();
 
-  const registrationSection =
-    document.getElementById("registration");
+  const registerSection =
+    document.getElementById(
+      "registration"
+    );
 
-  if (registrationSection) {
-    registrationSection.scrollIntoView({
-      behavior: "smooth"
+  if (registerSection) {
+
+    registerSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
     });
+
   }
 }
 
 
-/* =========================================================
+/* =========================================
    DISPLAY COURSES
-   ========================================================= */
+========================================= */
 
 function displayCourses() {
-  const courseList = document.getElementById("course-list");
 
-  if (!courseList) {
-    return;
-  }
+  const courseList =
+    document.getElementById(
+      "course-list"
+    );
+
+  if (!courseList) return;
 
   courseList.innerHTML = "";
 
-  courses.forEach(function (course) {
-    const card = document.createElement("div");
+  courses.forEach(
+    (course, index) => {
 
-    card.className = "course-card";
+      const card =
+        document.createElement("div");
 
-    card.innerHTML = `
-      <h3>${course.name}</h3>
+      card.className =
+        `course-card ${course.color}`;
 
-      <p class="course-duration">
-        ${course.duration}
-      </p>
+      card.innerHTML = `
 
-      <p>
-        ${course.description}
-      </p>
+        <div class="course-icon">
+          ${course.icon}
+        </div>
 
-      <button
-        type="button"
-        class="btn secondary course-details-btn">
-        VIEW DETAILS
-      </button>
-    `;
+        <span class="course-number">
+          0${index + 1}
+        </span>
 
-    const button =
-      card.querySelector(".course-details-btn");
+        <h3>
+          ${course.name}
+        </h3>
 
-    button.addEventListener("click", function () {
-      showCourseDetails(course.name);
-    });
+        <p>
+          ${course.short}
+        </p>
 
-    courseList.appendChild(card);
-  });
+        <button
+          type="button"
+          class="course-link"
+          onclick="showCourseDetails('${course.name}')"
+        >
+          VIEW COURSE
+          <span>→</span>
+        </button>
+
+      `;
+
+      courseList.appendChild(card);
+
+    }
+  );
 }
 
 
-/* =========================================================
-   SHOW COURSE DETAILS
-   ========================================================= */
+/* =========================================
+   COURSE DETAILS
+========================================= */
 
 function showCourseDetails(courseName) {
+
   const course =
-    courses.find(function (item) {
-      return item.name === courseName;
-    });
+    courses.find(
+      item => item.name === courseName
+    );
 
-  if (!course) {
-    return;
-  }
+  if (!course) return;
 
-  const detailsSection =
-    document.getElementById("course-details");
+  const section =
+    document.getElementById(
+      "course-details"
+    );
 
-  const detailsContent =
-    document.getElementById("details-content");
+  const content =
+    document.getElementById(
+      "details-content"
+    );
 
-  if (!detailsSection || !detailsContent) {
-    return;
-  }
+  if (!section || !content) return;
 
-  detailsContent.innerHTML = `
-    <div class="course-details-card">
+  content.innerHTML = `
 
-      <h2>${course.name}</h2>
+    <div class="details-card">
 
-      <p class="course-duration">
-        Duration: ${course.duration}
+      <button
+        type="button"
+        class="details-close"
+        onclick="closeCourseDetails()"
+      >
+        ×
+      </button>
+
+      <p class="eyebrow">
+        COURSE DETAILS
       </p>
 
-      <p>
+      <div class="details-icon">
+        ${course.icon}
+      </div>
+
+      <h2>
+        ${course.name}
+      </h2>
+
+      <p class="details-description">
         ${course.description}
       </p>
 
-      <div class="course-details-actions">
+      <div class="details-info">
 
-        <button
-          type="button"
-          class="btn primary register-course-btn">
-          REGISTER FOR THIS COURSE
-        </button>
+        <div>
+          <span>Course Fee</span>
+          <strong>₦10,000</strong>
+        </div>
 
-        <button
-          type="button"
-          class="btn secondary close-course-btn">
-          CLOSE
-        </button>
+        <div>
+          <span>Learning Format</span>
+          <strong>LIVE CLASSES</strong>
+        </div>
+
+        <div>
+          <span>Missed Class?</span>
+          <strong>RECORDING SHARED</strong>
+        </div>
 
       </div>
 
+      <button
+        type="button"
+        class="btn primary"
+        onclick="selectCourse('${course.name}')"
+      >
+        REGISTER FOR THIS COURSE
+      </button>
+
     </div>
+
   `;
 
-  detailsSection.classList.remove("hidden");
+  section.classList.remove("hidden");
 
-  const registerButton =
-    detailsContent.querySelector(".register-course-btn");
-
-  const closeButton =
-    detailsContent.querySelector(".close-course-btn");
-
-  registerButton.addEventListener("click", function () {
-    selectCourse(course.name);
-  });
-
-  closeButton.addEventListener("click", function () {
-    closeCourseDetails();
-  });
-
-  detailsSection.scrollIntoView({
+  section.scrollIntoView({
     behavior: "smooth",
     block: "start"
   });
 }
 
 
-/* =========================================================
+/* =========================================
    CLOSE COURSE DETAILS
-   ========================================================= */
+========================================= */
 
 function closeCourseDetails() {
-  const detailsSection =
-    document.getElementById("course-details");
 
-  if (detailsSection) {
-    detailsSection.classList.add("hidden");
+  const section =
+    document.getElementById(
+      "course-details"
+    );
+
+  if (section) {
+
+    section.classList.add(
+      "hidden"
+    );
+
   }
 }
 
 
-/* =========================================================
+/* =========================================
    SELECT COURSE
-   ========================================================= */
+========================================= */
 
 function selectCourse(courseName) {
-  const courseSelect =
-    document.getElementById("course");
 
-  if (courseSelect) {
-    courseSelect.value = courseName;
+  const select =
+    document.getElementById(
+      "course"
+    );
+
+  if (select) {
+
+    select.value =
+      courseName;
+
   }
 
   closeCourseDetails();
 
-  const registrationSection =
-    document.getElementById("registration");
+  const register =
+    document.getElementById(
+      "registration"
+    );
 
-  if (registrationSection) {
-    registrationSection.scrollIntoView({
-      behavior: "smooth"
+  if (register) {
+
+    register.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
     });
+
   }
 }
 
 
-/* =========================================================
+/* =========================================
    REGISTRATION FORM
-   ========================================================= */
+========================================= */
 
 function setupRegistrationForm() {
+
   const form =
-    document.getElementById("registration-form");
+    document.getElementById(
+      "registration-form"
+    );
 
-  if (!form) {
-    return;
-  }
+  if (!form) return;
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
+  form.addEventListener(
+    "submit",
+    function (event) {
 
-    const nameInput =
-      document.getElementById("name");
-
-    const phoneInput =
-      document.getElementById("phone");
-
-    const emailInput =
-      document.getElementById("email");
-
-    const courseInput =
-      document.getElementById("course");
-
-    const paymentNameInput =
-      document.getElementById("payment-name");
-
-    const message =
-      document.getElementById("form-message");
-
-    const submitButton =
-      document.getElementById("send-registration");
+      event.preventDefault();
 
 
-    /* -----------------------------------------
-       Make sure all elements exist
-       ----------------------------------------- */
+      const nameInput =
+        document.getElementById(
+          "name"
+        );
 
-    if (
-      !nameInput ||
-      !phoneInput ||
-      !emailInput ||
-      !courseInput ||
-      !paymentNameInput
-    ) {
-      console.error(
-        "One or more registration form fields are missing."
-      );
+      const phoneInput =
+        document.getElementById(
+          "phone"
+        );
 
-      if (message) {
-        message.textContent =
-          "There was a problem with the registration form. Please refresh the page and try again.";
+      const emailInput =
+        document.getElementById(
+          "email"
+        );
 
-        message.className =
-          "form-message error";
+      const courseInput =
+        document.getElementById(
+          "course"
+        );
+
+      const paymentNameInput =
+        document.getElementById(
+          "payment-name"
+        );
+
+      const message =
+        document.getElementById(
+          "form-message"
+        );
+
+
+      if (
+        !nameInput ||
+        !phoneInput ||
+        !emailInput ||
+        !courseInput ||
+        !paymentNameInput
+      ) {
+
+        if (message) {
+
+          message.textContent =
+            "There was a problem with the registration form. Please refresh the page and try again.";
+
+          message.className =
+            "form-message error";
+
+        }
+
+        return;
       }
 
-      return;
-    }
+
+      const name =
+        nameInput.value.trim();
+
+      const phone =
+        phoneInput.value.trim();
+
+      const email =
+        emailInput.value.trim();
+
+      const course =
+        courseInput.value.trim();
+
+      const paymentName =
+        paymentNameInput.value.trim();
 
 
-    /* -----------------------------------------
-       Get values
-       ----------------------------------------- */
+      /* -----------------------------------------
+         CHECK REQUIRED FIELDS
+      ----------------------------------------- */
 
-    const name =
-      nameInput.value.trim();
+      if (
+        !name ||
+        !phone ||
+        !email ||
+        !course ||
+        !paymentName
+      ) {
 
-    const phone =
-      phoneInput.value.trim();
+        if (message) {
 
-    const email =
-      emailInput.value.trim();
+          message.textContent =
+            "Please complete all registration fields.";
 
-    const course =
-      courseInput.value.trim();
+          message.className =
+            "form-message error";
 
-    const paymentName =
-      paymentNameInput.value.trim();
+        }
 
-
-    /* -----------------------------------------
-       Validate fields
-       ----------------------------------------- */
-
-    if (
-      !name ||
-      !phone ||
-      !email ||
-      !course ||
-      !paymentName
-    ) {
-      if (message) {
-        message.textContent =
-          "Please complete all registration fields.";
-
-        message.className =
-          "form-message error";
+        return;
       }
 
-      return;
-    }
 
+      /* -----------------------------------------
+         CHECK EMAIL
+      ----------------------------------------- */
 
-    /* -----------------------------------------
-       Validate email
-       ----------------------------------------- */
+      if (
+        !emailInput.checkValidity()
+      ) {
 
-    if (!emailInput.checkValidity()) {
-      if (message) {
-        message.textContent =
-          "Please enter a valid email address.";
+        if (message) {
 
-        message.className =
-          "form-message error";
+          message.textContent =
+            "Please enter a valid email address.";
+
+          message.className =
+            "form-message error";
+
+        }
+
+        emailInput.focus();
+
+        return;
       }
 
-      emailInput.focus();
 
-      return;
-    }
+      /* -----------------------------------------
+         ADMIN EMAIL
+      ----------------------------------------- */
 
-
-    /* -----------------------------------------
-       Registration email
-       ----------------------------------------- */
-
-    const adminEmail =
-      "stiacademy346@gmail.com";
+      const adminEmail =
+        "stiacademy346@gmail.com";
 
 
-    /* -----------------------------------------
-       Email subject
-       ----------------------------------------- */
+      /* -----------------------------------------
+         EMAIL SUBJECT
+      ----------------------------------------- */
 
-    const subject =
-      "STI Academy Registration - " + name;
+      const subject =
+        "STI Academy Registration - " +
+        name;
 
 
-    /* -----------------------------------------
-       Email body
-       ----------------------------------------- */
+      /* -----------------------------------------
+         EMAIL BODY
+      ----------------------------------------- */
 
-    const body = `
-Hello STI Academy Admin,
+      const emailBody =
 
-A new student has submitted a registration request.
+`Hello STI Academy Admin,
 
-STUDENT DETAILS
+I want to register for STI Academy.
 
-Full Name:
+FULL NAME:
 ${name}
 
-Phone Number:
+PHONE NUMBER:
 ${phone}
 
-Email Address:
+EMAIL ADDRESS:
 ${email}
 
-Course:
+COURSE:
 ${course}
 
-Name on Payment Account:
+NAME ON PAYMENT ACCOUNT:
 ${paymentName}
 
-The student will attach their payment receipt to this email before sending.
+I have made the required payment and will attach my payment receipt to this email.
 
 Thank you.
-STI Academy Registration Website
-`.trim();
+STI Academy Registration Website`;
 
 
-    /* -----------------------------------------
-       Gmail compose link
-       ----------------------------------------- */
+      /* -----------------------------------------
+         GMAIL COMPOSE URL
+      ----------------------------------------- */
 
-    const gmailURL =
-      "https://mail.google.com/mail/?view=cm&fs=1" +
-      "&to=" +
-      encodeURIComponent(adminEmail) +
-      "&su=" +
-      encodeURIComponent(subject) +
-      "&body=" +
-      encodeURIComponent(body);
-
-
-    /* -----------------------------------------
-       Open Gmail
-       ----------------------------------------- */
-
-    if (submitButton) {
-      submitButton.disabled = true;
-      submitButton.textContent =
-        "OPENING GMAIL...";
-    }
-
-    const gmailWindow =
-      window.open(
-        gmailURL,
-        "_blank"
-      );
+      const gmailURL =
+        "https://mail.google.com/mail/?view=cm&fs=1" +
+        "&to=" +
+        encodeURIComponent(adminEmail) +
+        "&su=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(emailBody);
 
 
-    /* -----------------------------------------
-       Check if browser blocked popup
-       ----------------------------------------- */
+      /* -----------------------------------------
+         OPEN GMAIL
+      ----------------------------------------- */
 
-    if (!gmailWindow) {
+      const gmailWindow =
+        window.open(
+          gmailURL,
+          "_blank"
+        );
+
+
+      /* -----------------------------------------
+         POPUP BLOCKED
+      ----------------------------------------- */
+
+      if (!gmailWindow) {
+
+        if (message) {
+
+          message.textContent =
+            "Your browser blocked Gmail from opening. Please allow pop-ups for this website and try again.";
+
+          message.className =
+            "form-message error";
+
+        }
+
+        return;
+      }
+
+
+      /* -----------------------------------------
+         SUCCESS MESSAGE
+      ----------------------------------------- */
+
       if (message) {
+
         message.textContent =
-          "Your browser blocked Gmail from opening. Please allow pop-ups for this website and try again.";
+          "Your registration details have been prepared in Gmail. Please attach your payment receipt and send the email to STI Admin.";
 
         message.className =
-          "form-message error";
+          "form-message success";
+
       }
 
-      if (submitButton) {
-        submitButton.disabled = false;
-        submitButton.textContent =
-          "SEND REGISTRATION BY EMAIL";
-      }
-
-      return;
     }
-
-
-    /* -----------------------------------------
-       Success message
-       ----------------------------------------- */
-
-    if (message) {
-      message.innerHTML =
-        "Your registration details have been prepared in Gmail. Please attach your payment receipt and send the email to STI Admin.";
-
-      message.className =
-        "form-message success";
-    }
-
-
-    if (submitButton) {
-      submitButton.disabled = false;
-      submitButton.textContent =
-        "SEND REGISTRATION BY EMAIL";
-    }
-  });
+  );
 }
 
 
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
+/* =========================================
+   SMOOTH NAVIGATION
+========================================= */
 
 function setupNavigation() {
-  const navLinks =
+
+  const links =
     document.querySelectorAll(
       'a[href^="#"]'
     );
 
-  navLinks.forEach(function (link) {
-    link.addEventListener("click", function (event) {
-      const targetId =
-        link.getAttribute("href");
+  links.forEach(link => {
 
-      if (
-        !targetId ||
-        targetId === "#"
-      ) {
-        return;
+    link.addEventListener(
+      "click",
+      function (event) {
+
+        const targetID =
+          this.getAttribute(
+            "href"
+          );
+
+        if (
+          !targetID ||
+          targetID === "#"
+        ) {
+          return;
+        }
+
+        const target =
+          document.querySelector(
+            targetID
+          );
+
+        if (!target) return;
+
+        event.preventDefault();
+
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
       }
+    );
 
-      const target =
-        document.querySelector(targetId);
-
-      if (!target) {
-        return;
-      }
-
-      event.preventDefault();
-
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    });
   });
 }
 
 
-/* =========================================================
-   QUIZ BUTTON
-   ========================================================= */
-
-function setupQuizButton() {
-  const quizButton =
-    document.getElementById("start-quiz");
-
-  if (!quizButton) {
-    return;
-  }
-
-  quizButton.addEventListener(
-    "click",
-    function (event) {
-      event.preventDefault();
-
-      startQuiz();
-    }
-  );
-}
-
-
-/* =========================================================
+/* =========================================
    ESCAPE KEY
-   ========================================================= */
+========================================= */
 
-function setupEscapeKey() {
-  document.addEventListener(
-    "keydown",
-    function (event) {
-      if (event.key !== "Escape") {
-        return;
-      }
+document.addEventListener(
+  "keydown",
+  function (event) {
+
+    if (event.key === "Escape") {
 
       closeResult();
+
       closeCourseDetails();
+
     }
-  );
-}
+
+  }
+);
 
 
-/* =========================================================
-   PAGE INITIALIZATION
-   ========================================================= */
+/* =========================================
+   INITIALIZE WEBSITE
+========================================= */
 
 document.addEventListener(
   "DOMContentLoaded",
@@ -954,10 +1588,6 @@ document.addEventListener(
     setupRegistrationForm();
 
     setupNavigation();
-
-    setupQuizButton();
-
-    setupEscapeKey();
 
   }
 );
