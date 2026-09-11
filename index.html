@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +35,6 @@
 
   <!-- MAIN CONTENT -->
   <main>
-
 
     <!-- HERO -->
     <section id="home" class="hero">
@@ -140,7 +140,6 @@
 
       <div class="quiz-box">
 
-
         <!-- QUIZ START -->
         <div id="quiz-start">
 
@@ -159,7 +158,7 @@
           <button
             type="button"
             class="btn primary"
-            onclick="startQuiz()">
+            onclick="startQuiz">
 
             START QUIZ
 
@@ -308,7 +307,6 @@
 
       <div class="steps">
 
-
         <div class="step">
 
           <span>
@@ -377,7 +375,6 @@
 
         </div>
 
-
       </div>
 
     </section>
@@ -403,7 +400,6 @@
       </div>
 
 
-      <!-- JavaScript loads courses here -->
       <div
         id="course-list"
         class="course-grid">
@@ -503,9 +499,8 @@
 
           <p class="payment-note">
 
-            After making payment, keep your Opay transaction reference
-            and payment screenshot ready. You will need them to complete
-            your registration.
+            After making payment, keep your payment screenshot ready.
+            You will need it to complete your registration.
 
           </p>
 
@@ -533,6 +528,7 @@
               <input
                 type="text"
                 id="name"
+                name="name"
                 placeholder="Your full name"
                 required>
 
@@ -548,6 +544,7 @@
               <input
                 type="tel"
                 id="phone"
+                name="phone"
                 placeholder="08012345678"
                 required>
 
@@ -566,6 +563,7 @@
             <input
               type="email"
               id="email"
+              name="email"
               placeholder="you@example.com"
               required>
 
@@ -581,6 +579,7 @@
 
             <select
               id="course"
+              name="course"
               required>
 
               <option value="">
@@ -612,21 +611,22 @@
           </div>
 
 
-          <!-- PAYMENT REFERENCE -->
+          <!-- NAME ON PAYMENT ACCOUNT -->
           <div class="form-group">
 
-            <label for="reference">
-              Payment Reference
+            <label for="payment-name">
+              Name on Payment Account
             </label>
 
             <input
               type="text"
-              id="reference"
-              placeholder="Transaction: 1234567890"
+              id="payment-name"
+              name="payment-name"
+              placeholder="Name exactly as shown on the account"
               required>
 
             <small>
-              Enter the transaction reference shown on your Opay payment receipt.
+              Enter the name exactly as it appears on the account that made the payment.
             </small>
 
           </div>
@@ -636,10 +636,9 @@
           <div class="payment-proof-notice">
 
             <p>
-              After clicking the SEND PROOF TO ADMIN ON WHATSAPP button,
-              WhatsApp will open with your registration details. Attach
-              your payment screenshot to the WhatsApp message before
-              sending it to STI Admin.
+              After submitting your registration, Gmail will open
+              with your registration details. Please attach your payment
+              receipt and send the email to STI Admin.
             </p>
 
           </div>
@@ -651,7 +650,7 @@
             id="send-registration"
             class="btn primary submit-btn">
 
-            SEND PROOF TO ADMIN ON WHATSAPP
+            SEND REGISTRATION BY EMAIL
 
           </button>
 
@@ -669,52 +668,18 @@
     </section>
 
 
-    <!-- CONTACT ADMIN -->
-    <section class="section contact-section">
-
-      <div>
-
-        <p class="eyebrow">
-          NEED HELP?
-        </p>
-
-        <h2>
-          Talk to STI Admin.
-        </h2>
-
-        <p>
-          Have questions about registration, payment or any of our courses?
-          Contact the admin directly on WhatsApp.
-        </p>
-
-        <a
-          href="https://wa.me/2348131525874?text=Hello%20STI%20Academy%20Admin%2C%20I%20need%20more%20information%20about%20the%20academy."
-          target="_blank"
-          rel="noopener"
-          class="btn primary"
-          id="contact-admin">
-
-          CONTACT ADMIN ON WHATSAPP
-
-        </a>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- FOOTER -->
-  <footer>
-
     <div class="logo">
 
       <span>
         STI
       </span>
 
-      Academy
+      
+      
+      
+      
+      
+      
 
     </div>
 
@@ -734,3 +699,4 @@
 
 </body>
 </html>
+
