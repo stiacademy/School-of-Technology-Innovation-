@@ -1416,9 +1416,9 @@ function setupRegistrationForm() {
 
       const emailBody =
 
-`Hello STI Academy Admin,
+`Hello STI Academy,
+I have made the required payment and will attach my payment receipt to this email.
 
-I want to register for STI Academy.
 
 FULL NAME:
 ${name}
@@ -1435,10 +1435,8 @@ ${course}
 NAME ON PAYMENT ACCOUNT:
 ${paymentName}
 
-I have made the required payment and will attach my payment receipt to this email.
-
 Thank you.
-STI Academy Registration Website`;
+STI Academy`;
 
 
       /* -----------------------------------------
