@@ -14,7 +14,9 @@ const courses = [
     description:
       "Learn how to create functional websites and digital experiences using modern web development skills.",
     icon: "</>",
-    color: "development"
+    color: "development",
+    fee: "₦10,000/month",
+    duration: "6 Months"
   },
 
   {
@@ -23,7 +25,9 @@ const courses = [
     description:
       "Learn how to plan and design attractive, user-friendly websites and digital interfaces.",
     icon: "◈",
-    color: "webdesign"
+    color: "webdesign",
+    fee: "₦10,000/month",
+    duration: "6 Months"
   },
 
   {
@@ -32,7 +36,9 @@ const courses = [
     description:
       "Learn how to create professional graphics, visual identities and digital designs.",
     icon: "✦",
-    color: "graphic"
+    color: "graphic",
+    fee: "₦10,000",
+    duration: "1 Month"
   },
 
   {
@@ -41,7 +47,9 @@ const courses = [
     description:
       "Learn how to edit videos, create engaging content and turn raw footage into professional visual stories.",
     icon: "▶",
-    color: "video"
+    color: "video",
+    fee: "₦10,000",
+    duration: "1 Month"
   },
 
   {
@@ -50,7 +58,9 @@ const courses = [
     description:
       "Learn how to manage social media pages, create content, engage audiences and help brands grow online.",
     icon: "@",
-    color: "social"
+    color: "social",
+    fee: "₦10,000",
+    duration: "1 Month"
   }
 ];
 
@@ -63,6 +73,7 @@ const quizQuestions = [
 
   {
     question: "What do you usually enjoy doing when you have free time?",
+
     options: [
       {
         text: "Figuring things out or learning how things work",
@@ -74,6 +85,7 @@ const quizQuestions = [
           social: 1
         }
       },
+
       {
         text: "Drawing, designing or making things look beautiful",
         scores: {
@@ -84,6 +96,7 @@ const quizQuestions = [
           social: 0
         }
       },
+
       {
         text: "Watching movies, creating content or telling stories",
         scores: {
@@ -94,6 +107,7 @@ const quizQuestions = [
           social: 2
         }
       },
+
       {
         text: "Browsing social media and interacting with people",
         scores: {
@@ -104,6 +118,7 @@ const quizQuestions = [
           social: 3
         }
       },
+
       {
         text: "Exploring new ideas and experimenting",
         scores: {
@@ -117,8 +132,10 @@ const quizQuestions = [
     ]
   },
 
+
   {
     question: "How would you describe yourself?",
+
     options: [
       {
         text: "Logical and curious",
@@ -130,6 +147,7 @@ const quizQuestions = [
           social: 1
         }
       },
+
       {
         text: "Creative and imaginative",
         scores: {
@@ -140,6 +158,7 @@ const quizQuestions = [
           social: 0
         }
       },
+
       {
         text: "Expressive and energetic",
         scores: {
@@ -150,6 +169,7 @@ const quizQuestions = [
           social: 2
         }
       },
+
       {
         text: "Social and communicative",
         scores: {
@@ -160,6 +180,7 @@ const quizQuestions = [
           social: 3
         }
       },
+
       {
         text: "A mixture of everything",
         scores: {
@@ -173,8 +194,10 @@ const quizQuestions = [
     ]
   },
 
+
   {
     question: "When you're given a difficult task, what's your first reaction?",
+
     options: [
       {
         text: "I break it down and solve it step by step",
@@ -186,6 +209,7 @@ const quizQuestions = [
           social: 1
         }
       },
+
       {
         text: "I think of a creative way to approach it",
         scores: {
@@ -196,6 +220,7 @@ const quizQuestions = [
           social: 1
         }
       },
+
       {
         text: "I try different things until something works",
         scores: {
@@ -206,6 +231,7 @@ const quizQuestions = [
           social: 1
         }
       },
+
       {
         text: "I ask people for ideas or feedback",
         scores: {
@@ -216,6 +242,7 @@ const quizQuestions = [
           social: 3
         }
       },
+
       {
         text: "I research and learn more about it",
         scores: {
@@ -229,8 +256,10 @@ const quizQuestions = [
     ]
   },
 
+
   {
     question: "Which environment would you enjoy working in most?",
+
     options: [
       {
         text: "Quiet and focused",
@@ -242,6 +271,7 @@ const quizQuestions = [
           social: 0
         }
       },
+
       {
         text: "Creative and flexible",
         scores: {
@@ -252,6 +282,7 @@ const quizQuestions = [
           social: 1
         }
       },
+
       {
         text: "Fast-paced and exciting",
         scores: {
@@ -262,6 +293,7 @@ const quizQuestions = [
           social: 2
         }
       },
+
       {
         text: "Social and interactive",
         scores: {
@@ -272,6 +304,7 @@ const quizQuestions = [
           social: 3
         }
       },
+
       {
         text: "A combination of different environments",
         scores: {
@@ -285,8 +318,10 @@ const quizQuestions = [
     ]
   },
 
+
   {
     question: "What gives you the most satisfaction?",
+
     options: [
       {
         text: "Solving a problem",
@@ -298,6 +333,7 @@ const quizQuestions = [
           social: 1
         }
       },
+
       {
         text: "Creating something beautiful",
         scores: {
@@ -308,6 +344,7 @@ const quizQuestions = [
           social: 0
         }
       },
+
       {
         text: "Telling a story or entertaining people",
         scores: {
@@ -318,6 +355,7 @@ const quizQuestions = [
           social: 2
         }
       },
+
       {
         text: "Connecting with people",
         scores: {
@@ -328,6 +366,7 @@ const quizQuestions = [
           social: 3
         }
       },
+
       {
         text: "Turning an idea into something real",
         scores: {
@@ -341,8 +380,10 @@ const quizQuestions = [
     ]
   },
 
+
   {
     question: "If you had to create something for a new business, which part would interest you most?",
+
     options: [
       {
         text: "Making the system work",
@@ -354,6 +395,7 @@ const quizQuestions = [
           social: 0
         }
       },
+
       {
         text: "Making the brand look good",
         scores: {
@@ -364,6 +406,7 @@ const quizQuestions = [
           social: 1
         }
       },
+
       {
         text: "Creating promotional content",
         scores: {
@@ -374,6 +417,7 @@ const quizQuestions = [
           social: 2
         }
       },
+
       {
         text: "Getting people interested in the business",
         scores: {
@@ -384,6 +428,7 @@ const quizQuestions = [
           social: 3
         }
       },
+
       {
         text: "Planning the whole digital experience",
         scores: {
@@ -397,8 +442,10 @@ const quizQuestions = [
     ]
   },
 
+
   {
     question: "How do you normally express your ideas?",
+
     options: [
       {
         text: "Through logic and explanations",
@@ -410,6 +457,7 @@ const quizQuestions = [
           social: 1
         }
       },
+
       {
         text: "Through images and designs",
         scores: {
@@ -420,6 +468,7 @@ const quizQuestions = [
           social: 0
         }
       },
+
       {
         text: "Through videos and storytelling",
         scores: {
@@ -430,6 +479,7 @@ const quizQuestions = [
           social: 2
         }
       },
+
       {
         text: "Through conversations and social media",
         scores: {
@@ -440,6 +490,7 @@ const quizQuestions = [
           social: 3
         }
       },
+
       {
         text: "Through a combination of different methods",
         scores: {
@@ -453,8 +504,10 @@ const quizQuestions = [
     ]
   },
 
+
   {
     question: "What kind of achievement would make you proudest?",
+
     options: [
       {
         text: "Building something that actually works",
@@ -466,6 +519,7 @@ const quizQuestions = [
           social: 1
         }
       },
+
       {
         text: "Creating a design people love",
         scores: {
@@ -476,6 +530,7 @@ const quizQuestions = [
           social: 0
         }
       },
+
       {
         text: "Creating a video people can't stop watching",
         scores: {
@@ -486,6 +541,7 @@ const quizQuestions = [
           social: 2
         }
       },
+
       {
         text: "Growing a page or brand successfully",
         scores: {
@@ -496,6 +552,7 @@ const quizQuestions = [
           social: 3
         }
       },
+
       {
         text: "Creating something completely new",
         scores: {
@@ -509,8 +566,10 @@ const quizQuestions = [
     ]
   },
 
+
   {
     question: "What matters most to you when choosing a career?",
+
     options: [
       {
         text: "Problem-solving and intellectual challenge",
@@ -522,6 +581,7 @@ const quizQuestions = [
           social: 1
         }
       },
+
       {
         text: "Creativity and self-expression",
         scores: {
@@ -532,6 +592,7 @@ const quizQuestions = [
           social: 1
         }
       },
+
       {
         text: "Freedom to create and tell stories",
         scores: {
@@ -542,6 +603,7 @@ const quizQuestions = [
           social: 2
         }
       },
+
       {
         text: "Communication and influence",
         scores: {
@@ -552,6 +614,7 @@ const quizQuestions = [
           social: 3
         }
       },
+
       {
         text: "Flexibility and opportunities to grow",
         scores: {
@@ -565,8 +628,10 @@ const quizQuestions = [
     ]
   },
 
+
   {
     question: "Imagine you become extremely skilled at one thing. Which outcome would excite you most?",
+
     options: [
       {
         text: "Being able to build useful digital products",
@@ -578,6 +643,7 @@ const quizQuestions = [
           social: 1
         }
       },
+
       {
         text: "Creating beautiful digital experiences",
         scores: {
@@ -588,6 +654,7 @@ const quizQuestions = [
           social: 0
         }
       },
+
       {
         text: "Producing professional visual content",
         scores: {
@@ -598,6 +665,7 @@ const quizQuestions = [
           social: 1
         }
       },
+
       {
         text: "Helping brands become successful online",
         scores: {
@@ -608,6 +676,7 @@ const quizQuestions = [
           social: 3
         }
       },
+
       {
         text: "Having a versatile digital skillset",
         scores: {
@@ -620,7 +689,6 @@ const quizQuestions = [
       }
     ]
   }
-
 ];
 
 
@@ -684,12 +752,10 @@ function startQuiz() {
 
   showQuestion();
 
-  document
-    .getElementById("quiz")
-    ?.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
+  document.getElementById("quiz")?.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
 }
 
 
@@ -707,35 +773,28 @@ function showQuestion() {
   const question =
     quizQuestions[currentQuestion];
 
-  if (!question) return;
-
   const progress =
-    ((currentQuestion + 1) /
-      quizQuestions.length) * 100;
+    ((currentQuestion + 1) / quizQuestions.length) * 100;
 
   let optionsHTML = "";
 
-  question.options.forEach(
-    (option, index) => {
+  question.options.forEach((option, index) => {
 
-      optionsHTML += `
-        <button
-          type="button"
-          class="quiz-option"
-          onclick="selectAnswer(${index})"
-        >
-          <span class="option-letter">
-            ${String.fromCharCode(65 + index)}
-          </span>
+    optionsHTML += `
+      <button
+        type="button"
+        class="quiz-option"
+        onclick="selectAnswer(${index})"
+      >
+        <span class="option-letter">
+          ${String.fromCharCode(65 + index)}
+        </span>
 
-          <span>
-            ${option.text}
-          </span>
-        </button>
-      `;
+        <span>${option.text}</span>
+      </button>
+    `;
 
-    }
-  );
+  });
 
   container.innerHTML = `
 
@@ -744,8 +803,7 @@ function showQuestion() {
       <div class="quiz-progress-top">
 
         <span>
-          Question ${currentQuestion + 1}
-          of ${quizQuestions.length}
+          Question ${currentQuestion + 1} of ${quizQuestions.length}
         </span>
 
         <span>
@@ -769,8 +827,7 @@ function showQuestion() {
     <div class="question-box">
 
       <p class="question-number">
-        QUESTION
-        ${String(currentQuestion + 1).padStart(2, "0")}
+        QUESTION ${String(currentQuestion + 1).padStart(2, "0")}
       </p>
 
       <h3>
@@ -796,29 +853,23 @@ function selectAnswer(optionIndex) {
   const question =
     quizQuestions[currentQuestion];
 
-  if (!question) return;
-
   const selectedOption =
     question.options[optionIndex];
 
   if (!selectedOption) return;
 
-  Object.keys(selectedOption.scores)
-    .forEach(course => {
+  Object.keys(selectedOption.scores).forEach(course => {
 
-      quizScores[course] +=
-        selectedOption.scores[course];
+    quizScores[course] +=
+      selectedOption.scores[course];
 
-    });
+  });
 
   selectedAnswers.push(optionIndex);
 
   currentQuestion++;
 
-  if (
-    currentQuestion >=
-    quizQuestions.length
-  ) {
+  if (currentQuestion >= quizQuestions.length) {
 
     showQuizResult();
 
@@ -907,18 +958,15 @@ function showQuizResult() {
   const resultKey =
     getRecommendedCourse();
 
-  recommendedCourse = resultKey;
+  recommendedCourse =
+    resultKey;
 
   const names = {
 
     webdev: "Web Development",
-
     webdesign: "Web Design",
-
     graphic: "Graphic Design",
-
     video: "Video Editing",
-
     social: "Social Media Management"
 
   };
@@ -927,19 +975,13 @@ function showQuizResult() {
     names[resultKey];
 
   const courseElement =
-    document.getElementById(
-      "recommended-course"
-    );
+    document.getElementById("recommended-course");
 
   const textElement =
-    document.getElementById(
-      "recommendation-text"
-    );
+    document.getElementById("recommendation-text");
 
   const popup =
-    document.getElementById(
-      "result-popup"
-    );
+    document.getElementById("result-popup");
 
   if (courseElement) {
 
@@ -962,11 +1004,6 @@ function showQuizResult() {
 
     popup.classList.remove("hidden");
 
-    popup.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-
   }
 }
 
@@ -978,9 +1015,7 @@ function showQuizResult() {
 function closeResult() {
 
   const popup =
-    document.getElementById(
-      "result-popup"
-    );
+    document.getElementById("result-popup");
 
   if (popup) {
 
@@ -999,13 +1034,9 @@ function registerRecommendedCourse() {
   const courseNames = {
 
     webdev: "Web Development",
-
     webdesign: "Web Design",
-
     graphic: "Graphic Design",
-
     video: "Video Editing",
-
     social: "Social Media Management"
 
   };
@@ -1016,10 +1047,7 @@ function registerRecommendedCourse() {
   const courseSelect =
     document.getElementById("course");
 
-  if (
-    courseSelect &&
-    course
-  ) {
+  if (courseSelect && course) {
 
     courseSelect.value =
       course;
@@ -1029,9 +1057,7 @@ function registerRecommendedCourse() {
   closeResult();
 
   const registerSection =
-    document.getElementById(
-      "registration"
-    );
+    document.getElementById("register");
 
   if (registerSection) {
 
@@ -1051,56 +1077,52 @@ function registerRecommendedCourse() {
 function displayCourses() {
 
   const courseList =
-    document.getElementById(
-      "course-list"
-    );
+    document.getElementById("course-list");
 
   if (!courseList) return;
 
   courseList.innerHTML = "";
 
-  courses.forEach(
-    (course, index) => {
+  courses.forEach((course, index) => {
 
-      const card =
-        document.createElement("div");
+    const card =
+      document.createElement("div");
 
-      card.className =
-        `course-card ${course.color}`;
+    card.className =
+      `course-card ${course.color}`;
 
-      card.innerHTML = `
+    card.innerHTML = `
 
-        <div class="course-icon">
-          ${course.icon}
-        </div>
+      <div class="course-icon">
+        ${course.icon}
+      </div>
 
-        <span class="course-number">
-          0${index + 1}
-        </span>
+      <span class="course-number">
+        0${index + 1}
+      </span>
 
-        <h3>
-          ${course.name}
-        </h3>
+      <h3>
+        ${course.name}
+      </h3>
 
-        <p>
-          ${course.short}
-        </p>
+      <p>
+        ${course.short}
+      </p>
 
-        <button
-          type="button"
-          class="course-link"
-          onclick="showCourseDetails('${course.name}')"
-        >
-          VIEW COURSE
-          <span>→</span>
-        </button>
+      <button
+        type="button"
+        class="course-link"
+        onclick="showCourseDetails('${course.name}')"
+      >
+        VIEW COURSE
+        <span>→</span>
+      </button>
 
-      `;
+    `;
 
-      courseList.appendChild(card);
+    courseList.appendChild(card);
 
-    }
-  );
+  });
 }
 
 
@@ -1118,14 +1140,10 @@ function showCourseDetails(courseName) {
   if (!course) return;
 
   const section =
-    document.getElementById(
-      "course-details"
-    );
+    document.getElementById("course-details");
 
   const content =
-    document.getElementById(
-      "details-content"
-    );
+    document.getElementById("details-content");
 
   if (!section || !content) return;
 
@@ -1161,7 +1179,12 @@ function showCourseDetails(courseName) {
 
         <div>
           <span>Course Fee</span>
-          <strong>₦10,000</strong>
+          <strong>${course.fee}</strong>
+        </div>
+
+        <div>
+          <span>Program Duration</span>
+          <strong>${course.duration}</strong>
         </div>
 
         <div>
@@ -1204,15 +1227,11 @@ function showCourseDetails(courseName) {
 function closeCourseDetails() {
 
   const section =
-    document.getElementById(
-      "course-details"
-    );
+    document.getElementById("course-details");
 
   if (section) {
 
-    section.classList.add(
-      "hidden"
-    );
+    section.classList.add("hidden");
 
   }
 }
@@ -1225,9 +1244,7 @@ function closeCourseDetails() {
 function selectCourse(courseName) {
 
   const select =
-    document.getElementById(
-      "course"
-    );
+    document.getElementById("course");
 
   if (select) {
 
@@ -1239,9 +1256,7 @@ function selectCourse(courseName) {
   closeCourseDetails();
 
   const register =
-    document.getElementById(
-      "registration"
-    );
+    document.getElementById("register");
 
   if (register) {
 
@@ -1261,245 +1276,175 @@ function selectCourse(courseName) {
 function setupRegistrationForm() {
 
   const form =
-    document.getElementById(
-      "registration-form"
-    );
+    document.getElementById("registration-form");
 
   if (!form) return;
 
-  form.addEventListener(
-    "submit",
-    function (event) {
+  form.addEventListener("submit", function (event) {
 
-      event.preventDefault();
+    event.preventDefault();
 
 
-      const nameInput =
-        document.getElementById(
-          "name"
-        );
+    const nameInput =
+      document.getElementById("name");
 
-      const phoneInput =
-        document.getElementById(
-          "phone"
-        );
+    const phoneInput =
+      document.getElementById("phone");
 
-      const emailInput =
-        document.getElementById(
-          "email"
-        );
+    const emailInput =
+      document.getElementById("email");
 
-      const courseInput =
-        document.getElementById(
-          "course"
-        );
+    const courseInput =
+      document.getElementById("course");
 
-      const paymentNameInput =
-        document.getElementById(
-          "payment-name"
-        );
+    const referenceInput =
+      document.getElementById("reference");
 
-      const message =
-        document.getElementById(
-          "form-message"
-        );
+    const message =
+      document.getElementById("form-message");
 
 
-      if (
-        !nameInput ||
-        !phoneInput ||
-        !emailInput ||
-        !courseInput ||
-        !paymentNameInput
-      ) {
+    const name =
+      nameInput
+        ? nameInput.value.trim()
+        : "";
 
-        if (message) {
+    const phone =
+      phoneInput
+        ? phoneInput.value.trim()
+        : "";
 
-          message.textContent =
-            "There was a problem with the registration form. Please refresh the page and try again.";
+    const email =
+      emailInput
+        ? emailInput.value.trim()
+        : "";
 
-          message.className =
-            "form-message error";
+    const courseName =
+      courseInput
+        ? courseInput.value
+        : "";
 
-        }
+    const reference =
+      referenceInput
+        ? referenceInput.value.trim()
+        : "";
 
-        return;
-      }
 
+    /* Validate required fields */
 
-      const name =
-        nameInput.value.trim();
-
-      const phone =
-        phoneInput.value.trim();
-
-      const email =
-        emailInput.value.trim();
-
-      const course =
-        courseInput.value.trim();
-
-      const paymentName =
-        paymentNameInput.value.trim();
-
-
-      /* -----------------------------------------
-         CHECK REQUIRED FIELDS
-      ----------------------------------------- */
-
-      if (
-        !name ||
-        !phone ||
-        !email ||
-        !course ||
-        !paymentName
-      ) {
-
-        if (message) {
-
-          message.textContent =
-            "Please complete all registration fields.";
-
-          message.className =
-            "form-message error";
-
-        }
-
-        return;
-      }
-
-
-      /* -----------------------------------------
-         CHECK EMAIL
-      ----------------------------------------- */
-
-      if (
-        !emailInput.checkValidity()
-      ) {
-
-        if (message) {
-
-          message.textContent =
-            "Please enter a valid email address.";
-
-          message.className =
-            "form-message error";
-
-        }
-
-        emailInput.focus();
-
-        return;
-      }
-
-
-      /* -----------------------------------------
-         ADMIN EMAIL
-      ----------------------------------------- */
-
-      const adminEmail =
-        "stiacademy346@gmail.com";
-
-
-      /* -----------------------------------------
-         EMAIL SUBJECT
-      ----------------------------------------- */
-
-      const subject =
-        "STI Academy Registration - " +
-        name;
-
-
-      /* -----------------------------------------
-         EMAIL BODY
-      ----------------------------------------- */
-
-      const emailBody =
-
-`Hello STI Academy,
-I have made the required payment and will attach my payment receipt to this email.
-
-
-FULL NAME:
-${name}
-
-PHONE NUMBER:
-${phone}
-
-EMAIL ADDRESS:
-${email}
-
-COURSE:
-${course}
-
-NAME ON PAYMENT ACCOUNT:
-${paymentName}
-
-Thank you.
-STI Academy`;
-
-
-      /* -----------------------------------------
-         GMAIL COMPOSE URL
-      ----------------------------------------- */
-
-      const gmailURL =
-        "https://mail.google.com/mail/?view=cm&fs=1" +
-        "&to=" +
-        encodeURIComponent(adminEmail) +
-        "&su=" +
-        encodeURIComponent(subject) +
-        "&body=" +
-        encodeURIComponent(emailBody);
-
-
-      /* -----------------------------------------
-         OPEN GMAIL
-      ----------------------------------------- */
-
-      const gmailWindow =
-        window.open(
-          gmailURL,
-          "_blank"
-        );
-
-
-      /* -----------------------------------------
-         POPUP BLOCKED
-      ----------------------------------------- */
-
-      if (!gmailWindow) {
-
-        if (message) {
-
-          message.textContent =
-            "Your browser blocked Gmail from opening. Please allow pop-ups for this website and try again.";
-
-          message.className =
-            "form-message error";
-
-        }
-
-        return;
-      }
-
-
-      /* -----------------------------------------
-         SUCCESS MESSAGE
-      ----------------------------------------- */
+    if (
+      !name ||
+      !phone ||
+      !email ||
+      !courseName ||
+      !reference
+    ) {
 
       if (message) {
 
         message.textContent =
-          "Your registration details have been prepared in Gmail. Please attach your payment receipt and send the email to STI Admin.";
+          "Please fill in all the required fields.";
 
         message.className =
-          "form-message success";
+          "form-message error";
 
       }
 
+      return;
+
     }
-  );
+
+
+    /* Find selected course */
+
+    const selectedCourse =
+      courses.find(
+        item => item.name === courseName
+      );
+
+
+    if (!selectedCourse) {
+
+      if (message) {
+
+        message.textContent =
+          "Please select a valid course.";
+
+        message.className =
+          "form-message error";
+
+      }
+
+      return;
+
+    }
+
+
+    /*
+      Create course payment information.
+    */
+
+    const paymentText =
+      selectedCourse.fee === "₦10,000/month"
+
+        ? `Course Fee: ₦10,000/month
+Program Duration: ${selectedCourse.duration}`
+
+        : `Course Fee: ₦10,000
+Program Duration: ${selectedCourse.duration}`;
+
+
+    /*
+      WhatsApp registration message.
+    */
+
+    const whatsappMessage =
+
+`Hello STI Academy Admin,
+
+I want to register for STI Academy.
+
+Full Name: ${name}
+Phone Number: ${phone}
+Email: ${email}
+Course: ${selectedCourse.name}
+
+${paymentText}
+
+Payment Reference: ${reference}
+
+I have made the required ₦10,000 payment.
+
+Please confirm my payment and registration.
+
+I will attach my payment receipt in this WhatsApp chat.`;
+
+
+    const whatsappURL =
+      "https://wa.me/2348131525874?text=" +
+      encodeURIComponent(whatsappMessage);
+
+
+    if (message) {
+
+      message.textContent =
+        "Opening WhatsApp... Please attach your payment receipt before sending.";
+
+      message.className =
+        "form-message success";
+
+    }
+
+
+    /*
+      Direct navigation is more reliable
+      on Android/mobile browsers than window.open().
+    */
+
+    window.location.href =
+      whatsappURL;
+
+  });
 }
 
 
@@ -1516,38 +1461,31 @@ function setupNavigation() {
 
   links.forEach(link => {
 
-    link.addEventListener(
-      "click",
-      function (event) {
+    link.addEventListener("click", function (event) {
 
-        const targetID =
-          this.getAttribute(
-            "href"
-          );
+      const targetID =
+        this.getAttribute("href");
 
-        if (
-          !targetID ||
-          targetID === "#"
-        ) {
-          return;
-        }
-
-        const target =
-          document.querySelector(
-            targetID
-          );
-
-        if (!target) return;
-
-        event.preventDefault();
-
-        target.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-
+      if (
+        !targetID ||
+        targetID === "#"
+      ) {
+        return;
       }
-    );
+
+      const target =
+        document.querySelector(targetID);
+
+      if (!target) return;
+
+      event.preventDefault();
+
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+    });
 
   });
 }
@@ -1564,7 +1502,6 @@ document.addEventListener(
     if (event.key === "Escape") {
 
       closeResult();
-
       closeCourseDetails();
 
     }
